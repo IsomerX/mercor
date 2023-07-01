@@ -1,6 +1,8 @@
 import { LiveKitRoom, VideoConference } from "@livekit/components-react";
 import { useEffect, useState } from "react";
+import type { GetServerSideProps } from "next";
 import { env } from "../env.mjs"
+
 
 export default () => {
   const room = "quickstart-room";
@@ -26,6 +28,7 @@ export default () => {
       connect={true}
       video={true}
       audio={true}
+      data-lk-theme="default"
     >
       <VideoConference />
     </LiveKitRoom>
