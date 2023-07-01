@@ -1,12 +1,15 @@
-import React, {FC} from 'react';
-import Image from 'next/image';
-import {FcGoogle} from 'react-icons/fc'
+import Image from "next/image";
+import { FcGoogle } from "react-icons/fc";
+import { useSession } from "next-auth/react";
+import { signIn } from "next-auth/react";
+import type { NextPage } from "next";
 
 
 
-const SignIn: FC = () => {
+const SignIn: NextPage= () => {
+    const { data: session } = useSession();
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-[1100px] mx-auto justify-center min-h-screen max-h-fit">
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-[1320px] mx-auto justify-center min-h-screen max-h-fit">
             
             <div className="h-full ">
              <Image 
@@ -30,18 +33,29 @@ const SignIn: FC = () => {
                 Be a part of our Fam!
                </h1>
 
-               <button className="my-4 flex font-secondary rounded-full outline-1 border-2 border-slate-400 hover:border-0 hover:bg-slate-400 hover:text-white mx-auto text-md p-2 px-4">
-                <FcGoogle
+               {session?.user.id
+          ? (
+            <>
+              <p className="text-slate-500">
+                Welcome back, {session?.user.name}!
+              </p>
+            </>
+          )
+          : (
+            <button
+              onClick={() => signIn("google")}
+              className="my-4 flex font-secondary rounded-full outline-1 border-2 border-slate-100 mx-auto text-md p-2 px-4"
+            >
+              <FcGoogle
                 className="mr-2"
                 fontSize={25}
-                />
-                Sign in with Google
-               </button>
-            </div>
-
-        </div>
-    )
-}
-
+              />
+              Sign in with Google
+            </button>
+          )}
+      </div>
+    </div>
+  );
+};
 
 export default SignIn;

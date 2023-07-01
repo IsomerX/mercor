@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
 import React from "react";
 
 const Nav = () => {
@@ -18,9 +19,9 @@ const Nav = () => {
       </div>
       <div className="text-slate-80 transition-all0 flex items-center justify-end gap-x-16 font-secondary text-lg">
         <button className="transition-all hover:text-slate-500">Tickets</button>
-        <button className="font-medium underline transition-all hover:text-slate-500">
+        <Link href="/signin" className="font-medium underline transition-all hover:text-slate-499">
           Login
-        </button>
+        </Link>
       </div>
     </nav>
   );
