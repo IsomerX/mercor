@@ -11,12 +11,6 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-model Example {
-    id        String   @id @default(cuid())
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-}
-
 // Necessary for Next auth
 model Account {
     id                String  @id @default(cuid())
@@ -44,14 +38,38 @@ model Session {
     user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
+model Event {
+    id            String            @id @default(cuid())
+    name          String
+    capacity      Int
+    price         Int
+    enrolledUsers EventEnrollment[]
+    beginsAt      DateTime
+    createdAt     DateTime          @default(now())
+    updatedAt     DateTime          @updatedAt
+    organizerID   String
+    organizer     User              @relation(fields: [organizerID], references: [id])
+}
+
+model EventEnrollment {
+    id        String   @id @default(cuid())
+    eventId   String
+    userId    String
+    event     Event    @relation(fields: [eventId], references: [id])
+    user      User     @relation(fields: [userId], references: [id])
+    createdAt DateTime @default(now())
+}
+
 model User {
-    id            String    @id @default(cuid())
-    name          String?
-    email         String?   @unique
-    emailVerified DateTime?
-    image         String?
-    accounts      Account[]
-    sessions      Session[]
+    id             String            @id @default(cuid())
+    name           String?
+    email          String?           @unique
+    emailVerified  DateTime?
+    image          String?
+    accounts       Account[]
+    sessions       Session[]
+    enrolledEvents EventEnrollment[]
+    organizes      Event[]
 }
 
 model VerificationToken {
