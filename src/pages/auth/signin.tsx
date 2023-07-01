@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { FcGoogle } from "react-icons/fc";
 import { useSession } from "next-auth/react";
-import { signIn } from "next-auth/react";
+import { signIn, signOut } from "next-auth/react";
 import type { NextPage } from "next";
 
-const SignIn: NextPage= () => {
+const SignIn: NextPage = () => {
   const { data: session } = useSession();
 
   return (
@@ -28,6 +28,12 @@ const SignIn: NextPage= () => {
               <p className="text-slate-500">
                 Welcome back, {session?.user.name}!
               </p>
+              <button
+                onClick={() => signOut()}
+                className="my-4 flex font-secondary rounded-full outline-1 border-2 border-slate-100 mx-auto text-md p-2 px-4 hover:bg-slate-100 hover:text-slate-900"
+              >
+                Sign Out
+              </button>
             </>
           )
           : (
