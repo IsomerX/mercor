@@ -34,7 +34,7 @@ export const livekitRouter = createTRPCRouter({
         canSubscribe: true,
       };
       const token = createToken({ identity, name, metadata }, grant);
-      return { identity, accessToken: token };
+      return { accessToken: token };
     }),
 
   getAll: publicProcedure.query(({ ctx }) => {
