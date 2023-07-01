@@ -53,9 +53,9 @@ const CreateEvent: NextPage = () => {
   }
 
   return (
-    <div className="max-w-[600px] mx-auto my-10 p-8">
+    <div className="max-w-[600px] mx-auto my-10 p-8 shadow-lg rounded-md border-[1px] border-slate-100 hover:shadow-[#0F1729] hover:shadow-lg">
     <Form 
-    
+    className=""
     {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
 
@@ -119,22 +119,15 @@ const CreateEvent: NextPage = () => {
 
            <div className="flex flex-col md:flex-row w-full justify-between">
             <div className="flex flex-col w-4/5">
-            <FormLabel className="my-1">Duration</FormLabel>
-              <DropdownMenu >
+            {/* <FormLabel className="my-1">Duration</FormLabel>
+         */}
               
-  <DropdownMenuTrigger
-  className="border-[1px] rounded-md text-slate-500 p-2 w-full mr-3"
-  >Duration</DropdownMenuTrigger>
-  
-  <DropdownMenuContent>
-    <DropdownMenuLabel>Duration</DropdownMenuLabel>
-    <DropdownMenuSeparator />
-    <DropdownMenuItem>30 mins</DropdownMenuItem>
-    <DropdownMenuItem>45 mins</DropdownMenuItem>
-    <DropdownMenuItem>60 mins</DropdownMenuItem>
-    <DropdownMenuItem>90 mins</DropdownMenuItem>
-  </DropdownMenuContent>
-</DropdownMenu>
+              <div className="w-full">
+              <FormLabel>Time</FormLabel>
+              <FormControl>
+                <Input placeholder="Date" {...field} />
+              </FormControl>
+              </div>
 </div>
 
 <div className="w-4/5 ml-3">
@@ -145,6 +138,32 @@ const CreateEvent: NextPage = () => {
               </div>
 </div>
 
+<div className="flex justify-between">
+<div className="w-4/5">
+              <FormLabel>Capacity</FormLabel>
+              <FormControl>
+                <Input placeholder="Date" {...field} />
+              </FormControl>
+              </div>
+
+              <div>
+              <FormLabel>Duration</FormLabel>
+
+              <DropdownMenu>
+  <DropdownMenuTrigger 
+  className="justify-center flex items-center bg-gray-100 rounded-md px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+  >Duration</DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuLabel>30 mins</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>45 mins</DropdownMenuItem>
+    <DropdownMenuItem>60 mins</DropdownMenuItem>
+    <DropdownMenuItem>90 mins</DropdownMenuItem>
+    {/* <DropdownMenuItem>Subscription</DropdownMenuItem> */}
+  </DropdownMenuContent>
+</DropdownMenu>
+              </div>
+              </div>
             </FormItem>
           )}
         />
