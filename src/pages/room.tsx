@@ -1,33 +1,43 @@
-import { LiveKitRoom, VideoConference } from "@livekit/components-react";
-import { useEffect, useState } from "react";
+import type { GetServerSideProps } from "next";
 import { env } from "../env.mjs"
+import { LiveKitRoom, useToken, VideoConference } from '@livekit/components-react';
 
-export default () => {
-  const room = "quickstart-room";
-  const name = "quickstart-user"; // TODO: interpolate with user name
-  const [token, setToken] = useState("");
+import type { NextPage } from 'next';
 
-  useEffect(() => {
-    (async () => {
-      const resp = await fetch(`/api/livekit?room=${ room }&username=${ name }`);
-      const data = await resp.json();
-      setToken(data.token);
-    })();
-  }, []);
+type Props = {}
 
-  if (token === "") {
-    return <div>Getting token...</div>;
-  }
+const Room: NextPage<Props> = ({ }) => {
+  const params = typeof window !== 'undefined' ? new URLSearchParams(location.search) : null;
+  const roomName = params?.get('room') ?? 'test-room';
+  const userIdentity = params?.get('user') ?? 'test-identity';
+
+  const token = useToken('/api/livekit', roomName, {
+    userInfo: {
+      identity: userIdentity,
+      name: userIdentity,
+    },
+  });
 
   return (
-    <LiveKitRoom
-      serverUrl={env.NEXT_PUBLIC_LIVEKIT_URL}
-      token={token}
-      connect={true}
-      video={true}
-      audio={true}
-    >
-      <VideoConference />
-    </LiveKitRoom>
+    <div data-lk-theme="default" style={{ height: '100vh' }}>
+      <LiveKitRoom
+        video={true}
+        audio={true}
+        token={token}
+        serverUrl={env.NEXT_PUBLIC_LIVEKIT_URL}
+      >
+        <VideoConference />
+      </LiveKitRoom>
+    </div>
   );
 };
+
+/**
+export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
+  return {
+    props: {},
+  };
+}
+*/
+
+export default Room;
