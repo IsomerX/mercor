@@ -6,20 +6,25 @@ import {FcGoogle} from 'react-icons/fc'
 
 const SignIn: FC = () => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 max-w-[1100px] mx-auto justify-center min-h-screen max-h-fit">
-            <Image 
-            className="w-full h-full  aspect-auto"
-            src="/auth.jpg" alt="Authentication" width={200} height={200} />
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-[1320px] mx-auto justify-center min-h-screen max-h-fit">
+            
+            <div className="h-full bg-gray-700">
+
+            </div>
             <div className="my-8 mx-auto">
 
-                {/* <Image 
-                src=""
-                /> */}
-               <h1 className=" md:text-2xl text-xl font-bold">
+                <Image 
+                src="/logo.svg"
+                alt="logo"
+                width={200}
+                height={200}
+                className="mx-auto my-10"
+                />
+               <h1 className="font-primary md:text-3xl text-xl">
                 Be a part of our Fam!
                </h1>
 
-               <button className="my-4 flex rounded-full outline-1 border-2 border-slate-100 mx-auto text-md p-2 px-4">
+               <button className="my-4 flex font-secondary rounded-full outline-1 border-2 border-slate-100 mx-auto text-md p-2 px-4">
                 <FcGoogle
                 className="mr-2"
                 fontSize={25}
