@@ -19,7 +19,7 @@ const Nav = () => {
       </div>
       <div className="text-slate-80 transition-all0 flex items-center justify-end gap-x-16 font-secondary text-lg">
         <button className="transition-all hover:text-slate-500">Tickets</button>
-        <Link href="/auth/signin" className="font-medium underline transition-all hover:text-slate-499">
+        <Link href="/signin" className="font-medium underline transition-all hover:text-slate-499">
           Login
         </Link>
       </div>
