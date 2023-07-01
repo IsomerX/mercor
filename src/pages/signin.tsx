@@ -1,5 +1,7 @@
 import React, {FC} from 'react';
 import Image from 'next/image';
+import {FcGoogle} from 'react-icons/fc'
+
 
 
 const SignIn: FC = () => {
@@ -8,12 +10,20 @@ const SignIn: FC = () => {
             <Image 
             className="w-full h-full  aspect-auto"
             src="/auth.jpg" alt="Authentication" width={200} height={200} />
-            <div className="my-8">
-               <h1>
+            <div className="my-8 mx-auto">
+
+                {/* <Image 
+                src=""
+                /> */}
+               <h1 className=" md:text-2xl text-xl font-bold">
                 Be a part of our Fam!
                </h1>
 
-               <button className="flex rounded-md ">
+               <button className="my-4 flex rounded-full outline-1 border-2 border-slate-100 mx-auto text-md p-2 px-4">
+                <FcGoogle
+                className="mr-2"
+                fontSize={25}
+                />
                 Sign in with Google
                </button>
             </div>
