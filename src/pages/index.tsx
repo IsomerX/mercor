@@ -3,7 +3,6 @@ import Head from "next/head";
 import Banner from "~/components/Banner";
 import Nav from "~/components/Nav";
 import Section from "~/components/Section";
-import Image from "next/image";
 
 export default function Home() {
   return (
