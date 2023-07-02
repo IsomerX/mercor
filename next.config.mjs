@@ -24,6 +24,10 @@ const config = {
     locales: ["en"],
     defaultLocale: "en",
   },
+
+  images: {
+    domains: ["images.contentstack.io", "www.digitalocean.com"],
+  }
 };
 
 export default config;

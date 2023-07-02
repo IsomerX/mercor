@@ -2,6 +2,7 @@ import Head from "next/head";
 import Banner from "~/components/Banner";
 import Nav from "~/components/Nav";
 import Section from "~/components/Section";
+import Image  from 'next/image';
 
 export default function Home() {
   return (
@@ -16,11 +17,76 @@ export default function Home() {
         <Banner />
       </Section>
       <Section className="mb-16 rounded-b-3xl bg-slate-800">
-        <h2 className="flex justify-between p-20 font-primary text-6xl leading-snug text-white">
+        <h2 className="font-primary flex justify-between p-20 text-6xl leading-snug text-white">
           <span>Join.</span> <span>Host.</span> <span>Stream.</span>{" "}
           <span>Attend.</span> <span>Enjoy.</span>
         </h2>
+
       </Section>
+
+      <div
+      className="relative w-9/10 md:w-4/5 mx-auto justify-center text-center p-10 text-2xl gap-7 font-primary text-slate-900 tracking-wide shadow-xl m-6 rounded-lg"
+      >
+        <Image
+        src="https://www.digitalocean.com/_next/static/media/lighthouse-clouds-blue.8a1f1a95.svg"
+        alt="Lighthouse with clouds and blue sky"
+        width={500}
+        height={500}
+        className="absolute bottom-0 right-0 opacity-30"
+        />
+       <div className="text-5xl text-slate-900 font-extrabold leading-9">
+        <p
+        className="mb-6"
+        >ABOUT US </p>
+       </div>
+          At evnt, we are passionate about empowering content creators and event
+          managers to effortlessly organize virtual paid events. Our experienced
+          team understands the challenges faced by organizers in today's digital
+          landscape. That's why we developed evnt - to provide a comprehensive
+          solution that simplifies the entire event management process. Our
+          mission is to enable you to create, monetize, and analyze successful
+          virtual events, all in one place. With evnt, you can focus on
+          delivering exceptional content and engaging experiences for your
+          audience, while we take care of the technical aspects.
+        </div>
+
+
+        <div
+      className="relative w-9/10 md:w-4/5 mx-auto justify-center text-center p-10 text-lg gap-7 font-primary text-slate-900 tracking-wide shadow-xl m-12 rounded-lg"
+      >
+       <div className="text-5xl text-slate-900 font-extrabold leading-9">
+        SERVICES
+       </div>
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            
+            <div className="flex flex-col relative">
+              <Image 
+              src="https://www.digitalocean.com/_next/static/media/dollar-up-splash.6b8727f3.png"
+              alt="monetization"
+              width={200}
+              height={200}
+              className="mx-auto"
+              />
+              <p className="bottom-0 absolute text-center mx-auto">
+            All-in-One Event Management Platform
+            </p>
+            </div>
+
+            <div className="flex flex-col justify-center relative">
+              <Image 
+              src="https://images.contentstack.io/v3/assets/bltefdd0b53724fa2ce/blteb2a69b069e31a5c/6170691752c42c67c026d099/customer-experience-gic-608x369.png"
+              alt="ticketing"
+              width={500}
+              height={500}
+              />
+              <p className="absolute bottom-0 text-center mx-auto">
+            Ticketing, Streaming, and Analytics - Seamlessly Integrated
+            </p>
+            </div>
+          </div>
+        </div>
+
+
       <Section className="mb-40">
         <div className="grid grid-cols-12 gap-16">
           <div className="col-span-3 h-[300px] rounded-3xl bg-slate-800"></div>
