@@ -2,13 +2,13 @@ import { NextPage } from "next";
 import { CiTimer } from "react-icons/ci";
 import { AiOutlineUser } from "react-icons/ai";
 import Image from "next/image";
-import type { Event } from "@prisma/client";
+import type { Event, User } from "@prisma/client";
 
-const Card: NextPage<Event> = () => {
+const Card: NextPage<Event & { organizer: User }> = (event) => {
   return (
     <div className="rounded-xl shadow-md max-w-[300px] text-white">
       <h1 className="p-3 text-xl bg-[#1E293B]">
-        Title
+        {event.name}
       </h1>
       <Image
         src="/corpo_event.jpeg"
@@ -23,18 +23,32 @@ const Card: NextPage<Event> = () => {
             fontSize={25}
             className="mr-3"
           />
-          Organiser
+          {event.organizer.name}
         </div>
         <div className="py-1 flex">
           <CiTimer
             fontSize={25}
             className="mr-3"
           />
-          Time
+          {event.beginsAt.toLocaleTimeString()}
         </div>
 
-        <div className="rounded-full px-3 bg-[#1E293B] text-white w-fit my-3">
-          500 Seats left!
+
+        <div className="flex justify-between">
+          <div className="rounded-full px-3 bg-[#1E293B] text-white w-fit my-3">
+            {event.capacity} Seats left!
+          </div>
+          <div className="rounded-full px-3 bg-[#1E293B] text-white w-fit my-3">
+            {event.price} {/* rupee  symbol*/} Rs
+          </div>
+          <div className="rounded-full px-3 bg-[#1E293B] text-white w-fit my-3">
+            {event.duration}min
+          </div>
+        </div>
+
+        {/* Buy Ticket */}
+        <div className="rounded-full justify-center px-3 bg-[#1E293B] text-white w-fit">
+          Buy Ticket
         </div>
       </div>
     </div>

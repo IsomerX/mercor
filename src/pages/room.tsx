@@ -11,8 +11,6 @@ const Room: NextPage<Props> = () => {
   const roomName = params?.get('room') ?? 'test-room';
   const userIdentity = params?.get('user') ?? 'test-identitysdf';
   const token = api.livekit.getToken.useQuery({ identity: userIdentity, roomName, name: userIdentity }, { refetchOnWindowFocus: false });
-  const messageToken = api.messagelivekit.getToken.useQuery({ identity: userIdentity, roomName, name: userIdentity }, { refetchOnWindowFocus: false })
-
 
   return (
     <div data-lk-theme="default" style={{ height: '100vh' }}>

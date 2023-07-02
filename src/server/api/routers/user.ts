@@ -13,12 +13,16 @@ export const userRouter
       });
       return events.map((event) => event.event);
     }),
-    enrollUser: protectedProcedure.input(z.object({ eventId: z.string() })).mutation(({ ctx, input }) => {
-      ctx.prisma.eventEnrollment.create({
+    enrollUser: protectedProcedure.input(z.object({ eventId: z.string() })).mutation(async ({ ctx, input }) => {
+      await ctx.prisma.eventEnrollment.create({
         data: {
           userId: ctx.session.user.id,
           eventId: input.eventId,
         },
+      });
+      await ctx.prisma.event.update({
+        where: { id: input.eventId },
+        data: { capacity: { decrement: 1 } },
       });
     }),
   });
