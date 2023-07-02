@@ -84,8 +84,14 @@ export default function Home() {
             </p>
             </div>
           </div>
-        </div>
 
+
+          
+        </div>
+        <div className="bg-[url('/concert.jpg')] w-full aspect-auto">
+             
+             Discover with us
+          </div>
 
       <Section className="mb-40">
         <div className="grid grid-cols-12 gap-16">

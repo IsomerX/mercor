@@ -1,3 +1,4 @@
+
 // import {FC} from 'react';
 import { type NextPage } from "next";
 import { Button } from "../components/ui/button";
@@ -45,8 +46,8 @@ const CreateEvent: NextPage = () => {
     // ✅ This will be type-safe and validated.
     console.log(values);
   }
-
-
+   
+  console.log("hello" + form.title)
   return (
     <div className="relative">
       <Nav />
