@@ -22,12 +22,13 @@ export default function Home() {
         </h2>
       </Section>
       <Section className="mb-40">
-        <div className="grid grid-cols-12 gap-16">
-          <div className="col-span-3 h-[300px] rounded-3xl bg-slate-800"></div>
-          <div className="col-span-4 h-[300px] rounded-3xl bg-slate-800"></div>
-          <div className="col-span-5 h-[300px] rounded-3xl bg-slate-800"></div>
-          <div className="col-span-6 h-[300px] rounded-3xl bg-slate-800"></div>
-          <div className="col-span-6 h-[300px] rounded-3xl bg-slate-800"></div>
+        <div className="grid grid-cols-4 grid-rows-2 gap-16">
+          <div className="h-[300px] rounded-3xl bg-yellow-300"></div>
+          <div className="row-span-2 rounded-3xl bg-slate-800"></div>
+          <div className="col-span-2 h-[300px] rounded-3xl bg-cyan-300"></div>
+          <div className="h-[300px] rounded-3xl bg-rose-400"></div>
+          <div className="h-[300px] rounded-3xl bg-emerald-300"></div>
+          <div className="h-[300px] rounded-3xl bg-slate-800"></div>
         </div>
       </Section>
     </>

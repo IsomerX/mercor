@@ -4,7 +4,7 @@ import React from "react";
 const Banner = () => {
   return (
     <>
-      <div className="py-20">
+      <div className="flex h-4/5 flex-col justify-center py-20">
         <div className="flex flex-col gap-7 font-primary text-8xl font-extrabold tracking-wide text-slate-900">
           <div>Find Amazing Events</div>
           <div className="flex items-center gap-5">
