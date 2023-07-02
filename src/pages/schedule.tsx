@@ -28,6 +28,7 @@ const ScheduleCard: React.FC<{
             month: "long",
             hour: "numeric",
             minute: "numeric",
+            timeZone: "Asia/Kolkata",
           })}
         </div>
       </div>
