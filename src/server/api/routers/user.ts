@@ -1,6 +1,7 @@
 import { createTRPCRouter, protectedProcedure } from "~/server/api/trpc";
 import { z } from "zod";
 
+//test
 export const userRouter = createTRPCRouter({
   getEnrolledEvents: protectedProcedure.query(async ({ ctx }) => {
     const events = await ctx.prisma.eventEnrollment.findMany({
