@@ -3,7 +3,6 @@ import { Button } from "../components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -13,12 +12,11 @@ import { Input } from "../components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
-import Image from "next/image";
 import { api } from "~/utils/api";
 import Nav from "~/components/Nav";
-import { useState } from "react";
 import Head from "next/head";
 import Section from "~/components/Section";
+import { useRouter } from "next/router";
 
 const formSchema = z.object({
   title: z.string(),
@@ -32,8 +30,12 @@ const CreateEvent: NextPage = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   });
-  const [done, setDone] = useState(false);
-  const mutation = api.event.createEvent.useMutation();
+  const { push } = useRouter();
+  const mutation = api.event.createEvent.useMutation({
+    onSuccess: () => {
+      push("/discover");
+    },
+  });
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
     mutation.mutate({
@@ -43,7 +45,6 @@ const CreateEvent: NextPage = () => {
       beginsAt: new Date(values.date).toUTCString(),
       duration: values.duration,
     });
-    setDone(true);
   }
 
   return (
@@ -164,12 +165,18 @@ const CreateEvent: NextPage = () => {
                     )}
                   />
                 </div>
-                <Button
-                  type="submit"
-                  className="col-span-2 mx-auto w-full font-secondary"
-                >
-                  Submit
-                </Button>
+                {mutation.isLoading ? (
+                  <h3 className="col-span-2 mx-auto w-full text-center font-secondary">
+                    Processing
+                  </h3>
+                ) : (
+                  <Button
+                    type="submit"
+                    className="col-span-2 mx-auto w-full font-secondary"
+                  >
+                    Submit
+                  </Button>
+                )}
 
                 <FormMessage />
               </form>
