@@ -10,7 +10,7 @@ const Discover: NextPage = () => {
     <div className="relative ">
       <Nav/>
 
-      <div className="absolute top-50 left-64 m-auto  rounded-full h-48 w-48 bg-[#212129]/40 filter blur-2xl mix-blend-multiply">
+      {/* <div className="absolute top-50 left-64 m-auto  rounded-full h-48 w-48 bg-[#212129]/40 filter blur-2xl mix-blend-multiply">
         </div>
         <div className="absolute top-48 right-64 m-auto  rounded-full h-48 w-48 bg-[#212129]/40 filter blur-2xl mix-blend-multiply">
           </div>
@@ -20,7 +20,7 @@ const Discover: NextPage = () => {
 
             <div className="absolute top-50 left-64 m-auto  rounded-full h-48 w-48 bg-[#212129]/40 filter blur-2xl mix-blend-multiply">
 
-            </div>
+            </div> */}
 
             <div className="m-4">
 

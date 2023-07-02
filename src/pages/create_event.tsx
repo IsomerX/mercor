@@ -70,7 +70,7 @@ const CreateEvent: NextPage = () => {
 
       <div className="absolute h-48 w-48 rounded-full bg-[#F0C37C]/50 bottom-14 right-24 filter blur-2xl">
         </div>
-    <div className=" bg-[#0F172A] max-w-[600px] mx-auto my-10 p-8 shadow-lg rounded-md border-[1px] border-slate-100 hover:shadow-[#0F1729] hover:shadow-lg ">
+    <div className=" bg-[#0F172A] max-w-[600px] mx-auto my-10 p-4 shadow-lg rounded-md border-[1px] border-slate-100 hover:shadow-[#0F1729] hover:shadow-lg ">
     <Form 
     className=""
     {...form}>
