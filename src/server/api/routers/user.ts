@@ -7,13 +7,14 @@ import { z } from "zod";
 export const userRouter
   = createTRPCRouter({
 
-    getEnrolledEvents: protectedProcedure.query(async ({ ctx }) => {
-      const events = await ctx.prisma.eventEnrollment.findMany({
-        where: { userId: ctx.session.user.id },
-        include: { event: true },
-      });
-      return events.map((event) => event.event);
+    getUserEvents: protectedProcedure.query(async ({ ctx }) => {
+      const user = await ctx.prisma.user.findUnique({
+        where: { id: ctx.session.user.id },
+        include: { enrolledEvents: { include: { event: true } }, organizes: true },
+      })
+      return user;
     }),
+
 
     enrollUser: protectedProcedure.input(z.object({ eventId: z.string() })).mutation(async ({ ctx, input }) => {
       const isEnrolled = await ctx.prisma.eventEnrollment.findFirst({ where: { userId: ctx.session.user.id, eventId: input.eventId } });
