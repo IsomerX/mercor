@@ -13,6 +13,7 @@ type Props = {
   ended: boolean | null;
   notStarted: boolean | null;
   eventName: string | null;
+  isHost: boolean;
 };
 
 const apiKey = env.LIVEKIT_API_KEY;
@@ -38,14 +39,15 @@ export const getServerSideProps: GetServerSideProps<Props> = async (
   let token: string | null = null;
   let ended: boolean | null = null
   let notStarted: boolean | null = null
+  let isHost = false;
 
   if (authorized) {
-    const isHost = enrollment.event.organizerID === session?.user.id;
+    isHost = enrollment.event.organizerID === session?.user.id;
     const grant: VideoGrant = {
       room: enrollment.event.id,
       roomJoin: true,
       canPublish: isHost,
-      canPublishData: isHost,
+      canPublishData: true,
       canSubscribe: true,
     };
     // beginsAt + duration (in minutes) should be less than current time
@@ -61,10 +63,10 @@ export const getServerSideProps: GetServerSideProps<Props> = async (
     }
   }
 
-  return { props: { token, eventName: enrollment?.event.name ?? null, ended, notStarted } };
+  return { props: { token, eventName: enrollment?.event.name ?? null, ended, notStarted, isHost } };
 };
 
-const Room: NextPage<Props> = ({ token, ended, eventName, notStarted }) => {
+const Room: NextPage<Props> = ({ token, ended, eventName, notStarted, isHost }) => {
   if (token === null) return <>Unauthorized</>;
   if (ended) return (<div>Event {eventName ?? ""} has ended</div>);
   if (notStarted) return (<div>The event {eventName ?? ""} is yet to begin!</div>);
@@ -72,8 +74,8 @@ const Room: NextPage<Props> = ({ token, ended, eventName, notStarted }) => {
   return (
     <div data-lk-theme="default" style={{ height: "100vh" }}>
       <LiveKitRoom
-        video={true}
-        audio={true}
+        video={isHost}
+        audio={isHost}
         token={token}
         serverUrl={env.NEXT_PUBLIC_LIVEKIT_URL}
       >
