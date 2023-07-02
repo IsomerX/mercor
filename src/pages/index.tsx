@@ -1,8 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import Banner from "~/components/Banner";
 import Nav from "~/components/Nav";
 import Section from "~/components/Section";
-import Image  from 'next/image';
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -21,80 +22,110 @@ export default function Home() {
           <span>Join.</span> <span>Host.</span> <span>Stream.</span>{" "}
           <span>Attend.</span> <span>Enjoy.</span>
         </h2>
-
       </Section>
-
-      <div
-      className="relative w-9/10 md:w-4/5 mx-auto justify-center text-center p-10 text-2xl gap-7 font-primary text-slate-900 tracking-wide shadow-xl m-6 rounded-lg"
-      >
-        <Image
-        src="https://www.digitalocean.com/_next/static/media/lighthouse-clouds-blue.8a1f1a95.svg"
-        alt="Lighthouse with clouds and blue sky"
-        width={500}
-        height={500}
-        className="absolute bottom-0 right-0 opacity-30"
-        />
-       <div className="text-5xl text-slate-900 font-extrabold leading-9">
-        <p
-        className="mb-6"
-        >ABOUT US </p>
-       </div>
-          At evnt, we are passionate about empowering content creators and event
-          managers to effortlessly organize virtual paid events. Our experienced
-          team understands the challenges faced by organizers in today's digital
-          landscape. That's why we developed evnt - to provide a comprehensive
-          solution that simplifies the entire event management process. Our
-          mission is to enable you to create, monetize, and analyze successful
-          virtual events, all in one place. With evnt, you can focus on
-          delivering exceptional content and engaging experiences for your
-          audience, while we take care of the technical aspects.
-        </div>
-
-
-        <div
-      className="relative w-9/10 md:w-4/5 mx-auto justify-center text-center p-10 text-lg gap-7 font-primary text-slate-900 tracking-wide shadow-xl m-12 rounded-lg"
-      >
-       <div className="text-5xl text-slate-900 font-extrabold leading-9">
-        SERVICES
-       </div>
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            
-            <div className="flex flex-col relative">
-              <Image 
-              src="https://www.digitalocean.com/_next/static/media/dollar-up-splash.6b8727f3.png"
-              alt="monetization"
-              width={200}
-              height={200}
-              className="mx-auto"
-              />
-              <p className="bottom-0 absolute text-center mx-auto">
-            All-in-One Event Management Platform
-            </p>
+      <Section className="mb-32">
+        <div className="grid grid-cols-4 grid-rows-2 gap-16">
+          <div className="flex flex-col gap-4 rounded-3xl bg-yellow-300 p-10">
+            <div className="font-primary text-4xl text-slate-800">
+              Ticketing
             </div>
-
-            <div className="flex flex-col justify-center relative">
-              <Image 
-              src="https://images.contentstack.io/v3/assets/bltefdd0b53724fa2ce/blteb2a69b069e31a5c/6170691752c42c67c026d099/customer-experience-gic-608x369.png"
-              alt="ticketing"
-              width={500}
-              height={500}
-              />
-              <p className="absolute bottom-0 text-center mx-auto">
-            Ticketing, Streaming, and Analytics - Seamlessly Integrated
+            <p className="font-secondary text-slate-700">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat
+              excepturi hic porro incidunt, nisi ipsa velit ullam, molestiae eum
+              ducimus cupiditate illum vel voluptatem unde
             </p>
+          </div>
+          <div className="row-span-2 flex flex-col justify-between gap-4 rounded-3xl bg-slate-800 p-10">
+            <span>
+              <div className="font-primary text-4xl text-slate-100">
+                Live Streaming
+              </div>
+              <p className="font-secondary pt-4 text-slate-200">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Repellat excepturi hic porro incidunt, nisi ipsa velit ullam,
+                molestiae eum ducimus cupiditate
+              </p>
+            </span>
+            <img
+              src="/concert.jpeg"
+              alt=""
+              className="h-[400px] w-full rounded-xl object-cover opacity-80"
+            />
+          </div>
+          <div className="col-span-2 flex flex-col gap-4 rounded-3xl bg-cyan-300 p-10">
+            <div className="font-primary text-4xl text-cyan-900">
+              Event Registration
+            </div>
+            <p className="font-secondary text-cyan-800">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat
+              excepturi hic porro incidunt, nisi ipsa velit ullam, molestiae eum
+              ducimus cupiditate Lorem ipsum dolor sit amet, consectetur
+              adipisicing elit. Voluptatem iste porro assumenda a maxime
+              molestias repellat earum nam error? Quasi iure modi qui ipsam,
+              optio sit repudiandae itaque dolore quis? Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Deserunt tempore cum iusto
+              illum, eveniet molestiae eligendi optio quod qui labore
+              accusantium soluta,
+            </p>
+          </div>
+          <div className="flex flex-col gap-4 rounded-3xl bg-rose-400 p-10">
+            <div className="font-primary text-4xl text-white">
+              Attend Events
+            </div>
+            <p className="font-secondary text-white">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat
+              excepturi hic porro incidunt, nisi ipsa velit ullam, molestiae eum
+              ducimus cupiditate illum vel voluptatem unde
+            </p>
+          </div>
+          <div className="col-span-2 flex flex-col gap-4 rounded-3xl bg-emerald-300 p-10">
+            <div className="font-primary text-4xl text-emerald-800">
+              Post-event Analytics
+            </div>
+            <p className="font-secondary text-emerald-800">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat
+              excepturi hic porro incidunt, nisi ipsa velit ullam, molestiae eum
+              ducimus cupiditate illum vel voluptatem unde
+            </p>
+            <div className="grid grid-cols-2 gap-x-10">
+              <div className="space-y-2">
+                <div className="font-primary text-5xl text-emerald-500">
+                  76%
+                </div>
+                <div className="font-secondary text-emerald-600">
+                  of attendees are stayed for the entire event
+                </div>
+              </div>
+              <div className="space-y-2">
+                <div className="font-primary text-5xl text-emerald-500">
+                  90%
+                </div>
+                <div className="font-secondary text-emerald-600">
+                  of attendees are stayed for 30 minutes or more
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-
-      <Section className="mb-40">
-        <div className="grid grid-cols-12 gap-16">
-          <div className="col-span-3 h-[300px] rounded-3xl bg-slate-800"></div>
-          <div className="col-span-4 h-[300px] rounded-3xl bg-slate-800"></div>
-          <div className="col-span-5 h-[300px] rounded-3xl bg-slate-800"></div>
-          <div className="col-span-6 h-[300px] rounded-3xl bg-slate-800"></div>
-          <div className="col-span-6 h-[300px] rounded-3xl bg-slate-800"></div>
-        </div>
+      </Section>
+      <Section className="mb-32 space-y-10">
+        <h2 className="font-primary text-7xl text-slate-800 underline">
+          About Us
+        </h2>
+        <p className="font-secondary text-lg text-slate-700">
+          At Evnt, we are passionate about empowering content creators and event
+          managers to effortlessly organize virtual paid events. Our experienced
+          team understands the challenges faced by organizers in todays digital
+          landscape. That&apos;s why we developed evnt - to provide a
+          comprehensive solution that simplifies the entire event management
+          process. Our mission is to enable you to create, monetize, and analyze
+          successful virtual events, all in one place. With evnt, you can focus
+          on delivering exceptional content and engaging experiences for your
+          audience, while we take care of the technical aspects.
+        </p>
+      </Section>
+      <Section className="font-primary mb-10 rounded-3xl bg-slate-800 py-10 text-center text-2xl font-bold text-slate-100">
+        Created With ❤️ By The Evnt Team
       </Section>
     </>
   );
