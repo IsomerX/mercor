@@ -7,19 +7,19 @@ const Banner = () => {
       <div className="py-20">
         <div className="flex flex-col gap-7 font-primary text-8xl font-extrabold tracking-wide text-slate-900">
           <div>Find Amazing Events</div>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-5 flex-wrap">
             happening in{" "}
             <img
               src="/photo2.webp"
-              className="h-24 w-1/4 rounded-full bg-right-bottom object-cover grayscale"
+              className="h-24 w-1/4 min-w-6 rounded-full bg-right-bottom object-cover grayscale"
               alt=""
             />
           </div>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-5 flex-wrap">
             Your{" "}
             <img
               src="/photo.webp"
-              className="h-24 w-1/6 rounded-full bg-right-bottom object-cover grayscale"
+              className="h-24 w-1/6 min-w-6 rounded-full bg-right-bottom object-cover grayscale"
               alt=""
             />
             City.

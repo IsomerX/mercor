@@ -7,9 +7,9 @@ const Nav = () => {
     <nav className="grid w-full grid-cols-3 border-b-2 border-slate-300 px-2 py-5">
       <div className="flex items-center gap-x-16 font-secondary text-lg text-slate-800 ">
         <button className="transition-all hover:text-slate-500">Home</button>
-        <button className="transition-all hover:text-slate-500">
+        <Link href='/discover' className="transition-all hover:text-slate-500">
           Discover
-        </button>
+        </Link>
         <button className="transition-all hover:text-slate-500">
           Schedule
         </button>

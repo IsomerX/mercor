@@ -5,7 +5,7 @@ import {
 } from "~/server/api/trpc";
 import { z } from "zod";
 
-export const userRouter
+export const eventRouter
   = createTRPCRouter({
     getAllEvents: publicProcedure.query(({ ctx }) => {
       return ctx.prisma.event.findMany();
