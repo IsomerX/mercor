@@ -91,3 +91,8 @@
   object-fit: cover;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); /* Adjust the polygon points to control the shape */
 }
+
+
+.eliptical_clip_path {
+  clip-path: ellipse(130px 140px at 10% 20%);
+}
