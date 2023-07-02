@@ -2,7 +2,6 @@ import { env } from "../env.mjs"
 import { LiveKitRoom, VideoConference } from '@livekit/components-react';
 import type { NextPage } from 'next';
 import { api } from "~/utils/api";
-// import type { GetServerSideProps } from "next";
 
 type Props = {}
 
@@ -25,13 +24,5 @@ const Room: NextPage<Props> = () => {
     </div>
   );
 };
-
-/**
-export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
-  return {
-    props: {},
-  };
-}
-*/
 
 export default Room;

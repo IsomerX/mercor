@@ -6,13 +6,13 @@ const Nav = () => {
   return (
     <nav className="grid w-full grid-cols-3 border-b-2 border-slate-300 px-2 py-5">
       <div className="flex items-center gap-x-16 font-secondary text-lg text-slate-800 ">
-        <button className="transition-all hover:text-slate-500">Home</button>
+        <Link href='/' className="transition-all hover:text-slate-500">Home</Link>
         <Link href='/discover' className="transition-all hover:text-slate-500">
           Discover
         </Link>
-        <button className="transition-all hover:text-slate-500">
+        <Link href='/schedule' className="transition-all hover:text-slate-500">
           Schedule
-        </button>
+        </Link>
       </div>
       <div className="flex items-center justify-center">
         <img src="/logo.svg" alt="logo" className="h-16 text-red-800" />
