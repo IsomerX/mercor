@@ -1,5 +1,3 @@
-
-// import {FC} from 'react';
 import { type NextPage } from "next";
 import { Button } from "../components/ui/button";
 import {
@@ -22,7 +20,7 @@ import { useState } from "react";
 
 const formSchema = z.object({
   title: z.string(),
-  date: z.coerce.date().min(new Date()),
+  date: z.string(),
   price: z.coerce.number(),
   capacity: z.coerce.number(),
   duration: z.coerce.number(),
@@ -179,6 +177,7 @@ const CreateEvent: NextPage = () => {
                           <option value="45">45 min</option>
                           <option value="60">1 hour</option>
                           <option value="90">1.5 hour</option>
+                          <option value="120">2 hour</option>
                         </select>
                       </FormControl>
                       <FormDescription>

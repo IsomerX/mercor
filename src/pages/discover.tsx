@@ -4,9 +4,10 @@ import Card from "~/components/Card";
 import { api } from "~/utils/api";
 
 const Discover: NextPage = () => {
-  const { data: events } = api.event.getAllEvents.useQuery(undefined, {
+  const { data: events, refetch } = api.event.getAllEvents.useQuery(undefined, {
     refetchOnWindowFocus: false,
   });
+  const mutation = api.user.enrollUser.useMutation({ onSuccess: () => refetch() });
   return (
     <div className="relative ">
       <Nav />
@@ -19,7 +20,7 @@ const Discover: NextPage = () => {
       }
 
       <div className="m-4">
-        {events ? events.map((event) => <Card {...event} />) : <>Loading...</>}
+        {events ? events.map((event) => <Card key={event.id} event={event} mutation={mutation} />) : <>Loading...</>}
       </div>
     </div>
   );
