@@ -97,6 +97,8 @@ const Card: React.FC<{
               weekday: "short",
               year: "numeric",
               month: "long",
+              hour: "numeric",
+              minute: "numeric",
             })}
           </div>
         </div>
