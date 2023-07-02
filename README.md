@@ -5,6 +5,9 @@
 > MERCOR STARTUP GATEWAY HACKATHON JULY, 2023
 >> Checkout our [Business Pitch Deck](https://www.canva.com/design/DAFngvU055U/hbY2EZRdhF0yG8h64wPN2A/edit?utm_content=DAFngvU055U&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
+> BUSINESS IDEA PITCH
+>>  https://youtu.be/raiVNbT0sr0
+
 ## Introduction
 
 Evnt is an all-in-one event management platform designed to revolutionize virtual paid events and livestreams. With Evnt, content creators and event managers can seamlessly organize, stream, and analyze events in one place, delivering exceptional experiences to attendees.
