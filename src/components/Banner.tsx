@@ -39,9 +39,11 @@ const Banner = () => {
                 Discover Events
               </button>
             </Link>
-            <button className="floating mt-10 rounded-2xl bg-slate-800 px-8 py-4 font-primary text-2xl text-white transition-all hover:opacity-90">
-              Create Them!
-            </button>
+            <Link href="/create">
+              <button className="floating mt-10 rounded-2xl bg-slate-800 px-8 py-4 font-primary text-2xl text-white transition-all hover:opacity-90">
+                Create Them!
+              </button>
+            </Link>
           </div>
         </div>
       </div>
