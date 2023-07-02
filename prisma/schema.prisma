@@ -44,6 +44,7 @@ model Event {
     capacity      Int
     price         Int
     enrolledUsers EventEnrollment[]
+    duration      Int
     beginsAt      DateTime
     createdAt     DateTime          @default(now())
     updatedAt     DateTime          @updatedAt

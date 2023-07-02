@@ -9,10 +9,10 @@ import { messagelivekitRouter } from './routers/messagelivekitRouter';
  * All routers added in /api/routers should be manually added here.
  */
 export const appRouter = createTRPCRouter({
-  livekit: livekitRouter
+  livekit: livekitRouter,
   event: eventRouter,
-  user: userRouter
-  messagelivekit: messagelivekitRou
+  user: userRouter,
+  messagelivekit: messagelivekitRouter
 });
 
 // export type definition of API
