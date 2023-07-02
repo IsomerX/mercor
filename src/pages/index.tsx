@@ -67,7 +67,7 @@ export default function Home() {
               height={200}
               className="mx-auto"
               />
-              <p className="bottom-0 absolute text-center mx-auto">
+              <p className="bottom-0 absolute text-center mx-auto font-primary">
             All-in-One Event Management Platform
             </p>
             </div>
@@ -79,7 +79,7 @@ export default function Home() {
               width={500}
               height={500}
               />
-              <p className="absolute bottom-0 text-center mx-auto">
+              <p className="absolute bottom-0 text-center mx-auto font-primary">
             Ticketing, Streaming, and Analytics - Seamlessly Integrated
             </p>
             </div>
