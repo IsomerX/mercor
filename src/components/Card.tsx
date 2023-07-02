@@ -100,6 +100,7 @@ const Card: React.FC<{
               hour: "numeric",
               minute: "numeric",
               timeZone: "Asia/Kolkata",
+              day: "numeric",
             })}
           </div>
         </div>
