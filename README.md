@@ -1,3 +1,7 @@
+# MERCOR STARTUP GATEWAY HACKATHON JULY, 2023
+
+Business Pitch Deck - https://www.canva.com/design/DAFngvU055U/hbY2EZRdhF0yG8h64wPN2A/edit?utm_content=DAFngvU055U&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 # Create T3 App
 
 This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
