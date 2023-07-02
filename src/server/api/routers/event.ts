@@ -26,7 +26,11 @@ export const eventRouter = createTRPCRouter({
         await ctx.prisma.event.create({
           data: {
             name: input.name,
-            beginsAt: new Date(input.beginsAt).toISOString(),
+            beginsAt: new Date(
+              new Date(input.beginsAt).toLocaleString("en-us", {
+                timeZone: "IST",
+              })
+            ).toISOString(),
             capacity: input.capacity,
             price: input.price ?? 0,
             duration: input.duration,
