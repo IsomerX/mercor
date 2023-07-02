@@ -1,4 +1,3 @@
-// import {FC} from 'react';
 import { type NextPage } from "next";
 import { Button } from "../components/ui/button";
 import {
