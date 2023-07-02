@@ -94,13 +94,14 @@ const CreateEvent: NextPage = () => {
               </h1>
             </div>
 
-            <div className="w-4/5 mr-3">
+            <div className="w-full mr-3 flex justify-between">
               <FormField
+              
                 control={form.control}
                 name="title"
                 render={({ field }) => (
                   <FormItem>
-                    <div className="flex flex-col md:flex-row justify-between">
+                    <div className="flex flex-col justify-between">
                       <FormLabel>Title</FormLabel>
                       <FormControl>
                         <Input placeholder="Title" {...field} />
@@ -115,7 +116,7 @@ const CreateEvent: NextPage = () => {
                 name="date"
                 render={({ field }) => (
                   <FormItem>
-                    <div className="w-4/5 ml-3">
+                    <div className="flex flex-col">
                       <FormLabel>Date</FormLabel>
                       <FormControl>
                         <Input {...field} type="datetime-local" />
@@ -125,9 +126,9 @@ const CreateEvent: NextPage = () => {
                   </FormItem>
                 )}
               />
+ </div>
 
-              <div className="flex flex-col md:flex-row w-full justify-between">
-                <div className="w-4/5 ml-3">
+              <div className="flex w-full justify-between">
                   <FormField
                     control={form.control}
                     name="price"
@@ -145,11 +146,8 @@ const CreateEvent: NextPage = () => {
                       </FormItem>
                     )}
                   />
-                </div>
-              </div>
+              
 
-              <div className="flex justify-between">
-                <div className="w-4/5">
                   <FormField
                     control={form.control}
                     name="capacity"
@@ -169,9 +167,15 @@ const CreateEvent: NextPage = () => {
                   control={form.control}
                   name="duration"
                   render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Duration</FormLabel>
-                      <FormControl>
+                    <FormItem
+                    className="flex flex-col"
+                    >
+                      <FormLabel
+                      >Duration</FormLabel>
+                      <FormControl
+                      
+                      className="border-[1px] w-fit border-slate-200 rounded-md p-2"
+                      >
                         <select {...field}>
                           <option value="30">30 min</option>
                           <option value="45">45 min</option>
@@ -188,10 +192,9 @@ const CreateEvent: NextPage = () => {
                   )}
                 />
                 <Button type="submit">Submit</Button>
-              </div>
-
+             
               <FormMessage />
-            </div>
+            
           </form>
         </Form>
       </div>
