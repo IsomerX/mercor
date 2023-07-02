@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import Banner from "~/components/Banner";
 import Nav from "~/components/Nav";
@@ -23,12 +24,87 @@ export default function Home() {
       </Section>
       <Section className="mb-40">
         <div className="grid grid-cols-4 grid-rows-2 gap-16">
-          <div className="h-[300px] rounded-3xl bg-yellow-300"></div>
-          <div className="row-span-2 rounded-3xl bg-slate-800"></div>
-          <div className="col-span-2 h-[300px] rounded-3xl bg-cyan-300"></div>
-          <div className="h-[300px] rounded-3xl bg-rose-400"></div>
-          <div className="h-[300px] rounded-3xl bg-emerald-300"></div>
-          <div className="h-[300px] rounded-3xl bg-slate-800"></div>
+          <div className="flex flex-col gap-4 rounded-3xl bg-yellow-300 p-10">
+            <div className="font-primary text-4xl text-slate-800">
+              Ticketing
+            </div>
+            <p className="font-secondary text-slate-700">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat
+              excepturi hic porro incidunt, nisi ipsa velit ullam, molestiae eum
+              ducimus cupiditate illum vel voluptatem unde
+            </p>
+          </div>
+          <div className="row-span-2 flex flex-col justify-between gap-4 rounded-3xl bg-slate-800 p-10">
+            <span>
+              <div className="font-primary text-4xl text-slate-100">
+                Live Streaming
+              </div>
+              <p className="pt-4 font-secondary text-slate-200">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Repellat excepturi hic porro incidunt, nisi ipsa velit ullam,
+                molestiae eum ducimus cupiditate
+              </p>
+            </span>
+            <img
+              src="/concert.jpeg"
+              alt=""
+              className="h-[400px] w-full rounded-xl object-cover opacity-80"
+            />
+          </div>
+          <div className="col-span-2 flex flex-col gap-4 rounded-3xl bg-cyan-300 p-10">
+            <div className="font-primary text-4xl text-cyan-900">
+              Event Registration
+            </div>
+            <p className="font-secondary text-cyan-800">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat
+              excepturi hic porro incidunt, nisi ipsa velit ullam, molestiae eum
+              ducimus cupiditate Lorem ipsum dolor sit amet, consectetur
+              adipisicing elit. Voluptatem iste porro assumenda a maxime
+              molestias repellat earum nam error? Quasi iure modi qui ipsam,
+              optio sit repudiandae itaque dolore quis? Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Deserunt tempore cum iusto
+              illum, eveniet molestiae eligendi optio quod qui labore
+              accusantium soluta,
+            </p>
+          </div>
+          <div className="flex flex-col gap-4 rounded-3xl bg-rose-400 p-10">
+            <div className="font-primary text-4xl text-white">
+              Attend Events
+            </div>
+            <p className="font-secondary text-white">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat
+              excepturi hic porro incidunt, nisi ipsa velit ullam, molestiae eum
+              ducimus cupiditate illum vel voluptatem unde
+            </p>
+          </div>
+          <div className="col-span-2 flex flex-col gap-4 rounded-3xl bg-emerald-300 p-10">
+            <div className="font-primary text-4xl text-emerald-800">
+              Post-event Analytics
+            </div>
+            <p className="font-secondary text-emerald-800">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat
+              excepturi hic porro incidunt, nisi ipsa velit ullam, molestiae eum
+              ducimus cupiditate illum vel voluptatem unde
+            </p>
+            <div className="grid grid-cols-2 gap-x-10">
+              <div className="space-y-2">
+                <div className="font-primary text-5xl text-emerald-500">
+                  76%
+                </div>
+                <div className="font-secondary text-emerald-600">
+                  of attendees are stayed for the entire event
+                </div>
+              </div>
+              <div className="space-y-2">
+                <div className="font-primary text-5xl text-emerald-500">
+                  90%
+                </div>
+                <div className="font-secondary text-emerald-600">
+                  of attendees are stayed for 30 minutes or more
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </Section>
     </>
