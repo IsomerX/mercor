@@ -22,7 +22,7 @@ export default function Home() {
           <span>Attend.</span> <span>Enjoy.</span>
         </h2>
       </Section>
-      <Section className="mb-40">
+      <Section className="mb-32">
         <div className="grid grid-cols-4 grid-rows-2 gap-16">
           <div className="flex flex-col gap-4 rounded-3xl bg-yellow-300 p-10">
             <div className="font-primary text-4xl text-slate-800">
@@ -106,6 +106,25 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </Section>
+      <Section className="mb-32 space-y-10">
+        <h2 className="font-primary text-7xl text-slate-800 underline">
+          About Us
+        </h2>
+        <p className="font-secondary text-lg text-slate-700">
+          At Evnt, we are passionate about empowering content creators and event
+          managers to effortlessly organize virtual paid events. Our experienced
+          team understands the challenges faced by organizers in todays digital
+          landscape. That&apos;s why we developed evnt - to provide a
+          comprehensive solution that simplifies the entire event management
+          process. Our mission is to enable you to create, monetize, and analyze
+          successful virtual events, all in one place. With evnt, you can focus
+          on delivering exceptional content and engaging experiences for your
+          audience, while we take care of the technical aspects.
+        </p>
+      </Section>
+      <Section className="mb-10 rounded-3xl bg-slate-800 py-10 text-center font-primary text-2xl font-bold text-slate-100">
+        Created With ❤️ By The Evnt Team
       </Section>
     </>
   );
