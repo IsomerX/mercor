@@ -17,7 +17,7 @@ export default function Home() {
         <Banner />
       </Section>
       <Section className="mb-16 rounded-b-3xl bg-slate-800">
-        <h2 className="font-primary flex justify-between p-20 text-6xl leading-snug text-white">
+        <h2 className="font-primary flex flex-wrap justify-between p-20 text-6xl leading-snug text-white">
           <span>Join.</span> <span>Host.</span> <span>Stream.</span>{" "}
           <span>Attend.</span> <span>Enjoy.</span>
         </h2>
