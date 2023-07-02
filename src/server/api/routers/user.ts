@@ -15,6 +15,15 @@ export const userRouter
       return user;
     }),
 
+    getEnrolledEvents: protectedProcedure.query(async ({ ctx }) => {
+      const user = await ctx.prisma.user.findUnique({
+        where: { id: ctx.session.user.id },
+        include: { enrolledEvents: { include: { event: true } } },
+      })
+      if (!user) throw new Error("User not found");
+      return user.enrolledEvents;
+    }),
+
 
     enrollUser: protectedProcedure.input(z.object({ eventId: z.string() })).mutation(async ({ ctx, input }) => {
       const isEnrolled = await ctx.prisma.eventEnrollment.findFirst({ where: { userId: ctx.session.user.id, eventId: input.eventId } });
