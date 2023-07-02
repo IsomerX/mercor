@@ -42,7 +42,7 @@ const Card: NextPage<{
             fontSize={25}
             className="mr-3"
           />
-          {event.beginsAt.toLocaleTimeString()}
+          {event.beginsAt.toLocaleDateString() + " @ " + event.beginsAt.toLocaleTimeString()}
         </div>
 
 
