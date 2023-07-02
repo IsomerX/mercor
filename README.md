@@ -8,6 +8,10 @@
 > BUSINESS IDEA PITCH
 >>  https://youtu.be/raiVNbT0sr0
 
+> WEBSITE WALKTHROUGH
+>> https://www.youtube.com/watch?v=CnmO9hLCJR4
+
+
 ## Introduction
 
 Evnt is an all-in-one event management platform designed to revolutionize virtual paid events and livestreams. With Evnt, content creators and event managers can seamlessly organize, stream, and analyze events in one place, delivering exceptional experiences to attendees.
