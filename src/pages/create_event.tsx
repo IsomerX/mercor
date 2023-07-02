@@ -46,6 +46,7 @@ const CreateEvent: NextPage = () => {
     console.log(values);
   }
 
+
   return (
     <div className="relative">
       <Nav />
@@ -99,14 +100,14 @@ const CreateEvent: NextPage = () => {
                     <div className="w-4/5 mr-3">
                       <FormLabel>Title</FormLabel>
                       <FormControl>
-                        <Input placeholder="Title" {...field} />
+                        <Input placeholder="Title" ref={form.title} />
                       </FormControl>
                     </div>
 
                     <div className="w-4/5 ml-3">
                       <FormLabel>Date</FormLabel>
                       <FormControl>
-                        <Input placeholder="Date" {...field} />
+                        <Input placeholder="Date" ref={form.date} />
                       </FormControl>
                     </div>
                   </div>
@@ -118,7 +119,7 @@ const CreateEvent: NextPage = () => {
                       <div className="w-full">
                         <FormLabel>Time</FormLabel>
                         <FormControl>
-                          <Input placeholder="Date" {...field} />
+                          <Input placeholder="Date" ref={form.time} />
                         </FormControl>
                       </div>
                     </div>
@@ -126,7 +127,7 @@ const CreateEvent: NextPage = () => {
                     <div className="w-4/5 ml-3">
                       <FormLabel>Price</FormLabel>
                       <FormControl>
-                        <Input placeholder="INR 199" {...field} />
+                        <Input placeholder="INR 199" ref={form.price} />
                       </FormControl>
                     </div>
                   </div>
@@ -135,7 +136,7 @@ const CreateEvent: NextPage = () => {
                     <div className="w-4/5">
                       <FormLabel>Capacity</FormLabel>
                       <FormControl>
-                        <Input placeholder="Date" {...field} />
+                        <Input placeholder="Date" ref={form.capacity} />
                       </FormControl>
                     </div>
 
