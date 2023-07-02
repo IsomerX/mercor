@@ -7,7 +7,7 @@ import type { NextPage } from "next";
 const SignIn: NextPage = () => {
   const { data: session } = useSession();
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-[1320px] mx-auto justify-center min-h-screen max-h-fit">
+    <div className="mx-auto grid max-h-fit min-h-screen w-full max-w-[1320px] grid-cols-1 justify-center md:grid-cols-2">
       <div className="h-full ">
         <Image
           src="/auth.jpg"
@@ -17,7 +17,7 @@ const SignIn: NextPage = () => {
           className="floating"
         />
       </div>
-      <div className="my-8 mx-auto">
+      <div className="mx-auto my-8">
         <Image
           src="/logo.svg"
           alt="logo"
@@ -25,28 +25,25 @@ const SignIn: NextPage = () => {
           height={200}
           className="mx-auto my-10"
         />
-        <h1 className="font-primary md:text-3xl text-xl">
+        <h1 className="font-primary text-xl md:text-3xl">
           Be a part of our Fam!
         </h1>
 
-        {session?.user.id
-          ? (
-            <p className="text-slate-500">
-              Welcome back, {session?.user.name}!
-            </p>
-          )
-          : (
-            <button
-              onClick={() => signIn("google")}
-              className="my-4 flex font-secondary rounded-full outline-1 border-2 border-slate-100 mx-auto text-md p-2 px-4"
-            >
-              <FcGoogle
-                className="mr-2"
-                fontSize={25}
-              />
-              Sign in with Google
-            </button>
-          )}
+        {session?.user.id ? (
+          <p className="text-slate-500">Welcome back, {session?.user.name}!</p>
+        ) : (
+          <button
+            onClick={() =>
+              signIn("google", {
+                callbackUrl: "/discover",
+              })
+            }
+            className="text-md mx-auto my-4 flex rounded-full border-2 border-slate-100 p-2 px-4 font-secondary outline-1"
+          >
+            <FcGoogle className="mr-2" fontSize={25} />
+            Sign in with Google
+          </button>
+        )}
       </div>
     </div>
   );
